@@ -6,7 +6,10 @@ export async function middleware(request: NextRequest) {
   console.log("masuk middleware");
 
   const authorization = request.headers.get("Authorization");
-  if (request.nextUrl.pathname.startsWith("/api/user/info")) {
+  if (
+    request.nextUrl.pathname.startsWith("/api/user/info") ||
+    request.nextUrl.pathname.startsWith("/api/user/attendance")
+  ) {
     if (!authorization) {
       return NextResponse.json(
         {

@@ -48,6 +48,71 @@ class User {
     ];
     return await database.collection("users").aggregate(agg).toArray();
   }
+
+  static async getUserAttendance(id: string) {
+    // console.log(id);
+
+    let agg = [
+      {
+        $unset: ["password", "phoneNumber", "email"],
+      },
+      {
+        $lookup: {
+          from: "attendance_records",
+          let: {
+            user_id: new ObjectId(String(id)),
+          },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $eq: ["$userId", "$$user_id"],
+                },
+              },
+            },
+            {
+              $lookup: {
+                from: "schedules",
+                let: {
+                  classSchedule: "$scheduleId",
+                },
+                pipeline: [
+                  {
+                    $match: {
+                      $expr: {
+                        $eq: ["$_id", "$$classSchedule"],
+                      },
+                    },
+                  },
+                  {
+                    $lookup: {
+                      from: "subjects",
+                      let: {
+                        subjectSchedule: "$subjectId",
+                      },
+                      pipeline: [
+                        {
+                          $match: {
+                            $expr: {
+                              $eq: ["$_id", "$$subjectSchedule"],
+                            },
+                          },
+                        },
+                      ],
+                      as: "subjectDetail",
+                    },
+                  },
+                ],
+                as: "schedulesDetail",
+              },
+            },
+          ],
+          as: "attendanceDetail",
+        },
+      },
+    ];
+    return await database.collection("users").aggregate(agg).toArray();
+  }
   static async createUser(payload: UserType) {
     const parsedData = UserSchema.safeParse(payload);
     if (!parsedData.success) {
