@@ -35,12 +35,14 @@ export async function middleware(request: NextRequest) {
       _id: string;
       email: string;
       username: string;
+      role: string;
     }>(token);
 
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-id", decoded._id);
     requestHeaders.set("x-email", decoded.email);
     requestHeaders.set("x-username", decoded.username);
+    requestHeaders.set("x-role", decoded.role);
     return NextResponse.next({
       request: {
         headers: requestHeaders,
