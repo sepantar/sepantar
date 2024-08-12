@@ -7,13 +7,12 @@ interface summaryType{
     name : string;
     subsections : Array<string>
 }
-// Konfigurasi API route
+
 export async function POST(request: Request) {
     try {
         let dataForm = await request.formData();
         const subjectId = dataForm.get("subjectId") as string;
         const file = dataForm.get("file") as File;
-        console.log(subjectId, file);
         const buffer = await file.arrayBuffer();
         const pdfBuffer = Buffer.from(buffer);
         const pdfData = await pdf(pdfBuffer);
@@ -74,10 +73,8 @@ export async function POST(request: Request) {
                 summary = additionalSummary.choices[0].message.content;
             }
         }
-        console.log( summary);
         const cleanJsonString = summary.replace(/\\n/g, "");
         let summaryObj: summaryType = JSON.parse(cleanJsonString);
-        console.log( summaryObj);
         let add = await Chapter.insertChapter(summaryObj, subjectId);
         if(!add){
             return NextResponse.json(

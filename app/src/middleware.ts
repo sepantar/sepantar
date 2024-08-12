@@ -8,7 +8,8 @@ export async function middleware(request: NextRequest) {
   const authorization = request.headers.get("Authorization");
   if (
     request.nextUrl.pathname.startsWith("/api/user/info") ||
-    request.nextUrl.pathname.startsWith("/api/user/attendance")
+    request.nextUrl.pathname.startsWith("/api/user/attendance") ||
+    request.nextUrl.pathname.startsWith("/api/subject")
   ) {
     if (!authorization) {
       return NextResponse.json(
@@ -52,5 +53,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/api/user/:path*"],
+  matcher: ["/api/user/:path*", "/api/subject/:path*"],
 };
