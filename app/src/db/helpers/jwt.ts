@@ -5,6 +5,7 @@ const SECRET = process.env.JWT_SECRET as string;
 
 export const signToken = (payload: {
   _id: string;
+  role: string;
   email: string;
   username: string;
 }) => {

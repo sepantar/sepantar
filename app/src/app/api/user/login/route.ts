@@ -40,6 +40,7 @@ export async function POST(request: Request) {
   }
   let access_token = signToken({
     _id: findUser._id.toString(),
+    role: findUser.role,
     email: findUser.email,
     username: findUser.username,
   });

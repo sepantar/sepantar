@@ -49,70 +49,42 @@ class User {
     return await database.collection("users").aggregate(agg).toArray();
   }
 
-  static async getUserAttendance(id: string) {
-    // console.log(id);
-
+  static async getTeacherById(id: string) {
     let agg = [
       {
-        $unset: ["password", "phoneNumber", "email"],
+        $match: {
+          _id: new ObjectId(String(id)),
+        },
       },
       {
         $lookup: {
-          from: "attendance_records",
-          let: {
-            user_id: new ObjectId(String(id)),
-          },
-          pipeline: [
-            {
-              $match: {
-                $expr: {
-                  $eq: ["$userId", "$$user_id"],
-                },
-              },
-            },
-            {
-              $lookup: {
-                from: "schedules",
-                let: {
-                  classSchedule: "$scheduleId",
-                },
-                pipeline: [
-                  {
-                    $match: {
-                      $expr: {
-                        $eq: ["$_id", "$$classSchedule"],
-                      },
-                    },
-                  },
-                  {
-                    $lookup: {
-                      from: "subjects",
-                      let: {
-                        subjectSchedule: "$subjectId",
-                      },
-                      pipeline: [
-                        {
-                          $match: {
-                            $expr: {
-                              $eq: ["$_id", "$$subjectSchedule"],
-                            },
-                          },
-                        },
-                      ],
-                      as: "subjectDetail",
-                    },
-                  },
-                ],
-                as: "schedulesDetail",
-              },
-            },
-          ],
-          as: "attendanceDetail",
+          from: "schedules",
+          localField: "_id",
+          foreignField: "teacherId",
+          as: "schedules",
         },
+      },
+      {
+        $unwind: "$schedules",
+      },
+      {
+        $lookup: {
+          from: "subjects",
+          localField: "schedules.subjectId",
+          foreignField: "_id",
+          as: "subject",
+        },
+      },
+      {
+        $unwind: "$subject",
+      },
+      {
+        $unset: ["password", "schedules"],
       },
     ];
     return await database.collection("users").aggregate(agg).toArray();
   }
+
   static async createUser(payload: UserType) {
     const parsedData = UserSchema.safeParse(payload);
     if (!parsedData.success) {
