@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@octoai/client": "^0.5.2",
-    "pdf-parse": "^1.1.1"
-  },
-  "devDependencies": {
-    "@types/pdf-parse": "^1.1.4"
-  }
-}
