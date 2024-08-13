@@ -45,5 +45,5 @@ export async function POST(request: Request) {
     username: findUser.username,
   });
   cookies().set("Authorization", `Bearer ${access_token}`);
-  return NextResponse.json({ access_token: access_token });
+  return NextResponse.json({ access_token: access_token, role: findUser.role });
 }
