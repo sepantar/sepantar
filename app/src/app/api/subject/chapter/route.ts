@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Client } from "@octoai/client";
 import pdf from "pdf-parse";
 import Chapter from "@/db/models/Chapter";
+import extractValidJSON from "@/db/helpers/validjson";
 
 interface summaryType{
     name : string;
@@ -13,9 +14,13 @@ export async function POST(request: Request) {
         let dataForm = await request.formData();
         const subjectId = dataForm.get("subjectId") as string;
         const file = dataForm.get("file") as File;
+        console.log(subjectId, file);
+        
         const buffer = await file.arrayBuffer();
         const pdfBuffer = Buffer.from(buffer);
         const pdfData = await pdf(pdfBuffer);
+        console.log(pdfBuffer);
+        
         const pdfText = pdfData.text;
         const client = new Client(process.env.OCTOAI_API_KEY);
         const chunkSize = 500 * 4;
@@ -50,6 +55,8 @@ export async function POST(request: Request) {
             summaries.push(completion.choices[0].message.content as string);
         }
         let summary = summaries.join("\n\n");
+        // console.log(summary);
+        
         if (summary.length > 500) {
             const additionalSummary = await client.chat.completions.create({
                 messages: [
@@ -73,8 +80,13 @@ export async function POST(request: Request) {
                 summary = additionalSummary.choices[0].message.content;
             }
         }
-        const cleanJsonString = summary.replace(/\\n/g, "");
-        let summaryObj: summaryType = JSON.parse(cleanJsonString);
+        // const cleanJsonString = summary.replace(/\\n/g, "");
+        // const cleanJsonString = extractValidJSON(summary)
+        // console.log(cleanJsonString);
+        
+        let summaryObj: summaryType = extractValidJSON(summary)
+        console.log(summaryObj);
+        
         let add = await Chapter.insertChapter(summaryObj, subjectId);
         if(!add){
             return NextResponse.json(
