@@ -19,8 +19,6 @@ export async function POST(request: Request) {
         const buffer = await file.arrayBuffer();
         const pdfBuffer = Buffer.from(buffer);
         const pdfData = await pdf(pdfBuffer);
-        console.log(pdfBuffer);
-        
         const pdfText = pdfData.text;
         const client = new Client(process.env.OCTOAI_API_KEY);
         const chunkSize = 500 * 4;
@@ -55,7 +53,7 @@ export async function POST(request: Request) {
             summaries.push(completion.choices[0].message.content as string);
         }
         let summary = summaries.join("\n\n");
-        // console.log(summary);
+        console.log(summary);
         
         if (summary.length > 500) {
             const additionalSummary = await client.chat.completions.create({
@@ -85,15 +83,18 @@ export async function POST(request: Request) {
         // console.log(cleanJsonString);
         
         let summaryObj: summaryType = extractValidJSON(summary)
-        console.log(summaryObj);
+        console.log(summaryObj, "<<<<route");
         
         let add = await Chapter.insertChapter(summaryObj, subjectId);
+        console.log("ini log route atas");
+        
         if(!add){
             return NextResponse.json(
                 { message: "Failed to save summary." },
                 { status: 500 }
             );
         }
+        console.log("masuk route iniiiii");
         return NextResponse.json({message: "Success add file"}, { status: 200 });
     } catch (error: any) {
         console.error("Error processing PDF:", error);

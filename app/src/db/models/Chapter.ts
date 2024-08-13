@@ -10,13 +10,17 @@ class Chapter {
     static collection() {
         return database.collection("chapters");
     }
-    static insertChapter(summary: summaryType, subjectId: string) {
-        console.log(summary, subjectId);
-        return this.collection().insertOne({
+    static async insertChapter(summary: summaryType, subjectId: string) {
+        console.log(summary, subjectId, "<<<model");
+        await this.collection().insertOne({
             name: summary.name,
             material: summary.subsections,
             subjectId: new ObjectId(String(subjectId)),
         });
+        return "success add"
+    }
+    static async getChapterById(chapterId: string) {
+        return this.collection().findOne({ _id: new ObjectId(chapterId) });
     }
 }
 

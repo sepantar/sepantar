@@ -1,14 +1,15 @@
+import { ObjectId } from "mongodb";
 import { database } from "../config/mongodb";
 
 export interface planType {
-    name : string;
-    plan : Array<Plan>
+    name: string;
+    plan: Array<Plan>;
 }
 
 export interface Plan {
     task: string;
     subtasks: string[];
-    status : false
+    status: false;
 }
 
 class Studyplan {
@@ -17,9 +18,9 @@ class Studyplan {
     }
     static createPlan(userId: string, subjectId: string, planOutput: planType) {
         return this.collection().insertOne({
-            subjectId: subjectId,
+            subjectId: new ObjectId(String(subjectId)),
             plan_contents: planOutput.plan,
-            userId: userId,
+            userId: new ObjectId(String(userId)),
         });
     }
 }
