@@ -9,6 +9,7 @@ export async function middleware(request: NextRequest) {
   if (
     request.nextUrl.pathname.startsWith("/api/user/info") ||
     request.nextUrl.pathname.startsWith("/api/user/attendance") ||
+    request.nextUrl.pathname.startsWith("/api/user/schedule") ||
     request.nextUrl.pathname.startsWith("/api/subject")
   ) {
     if (!authorization) {
