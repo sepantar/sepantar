@@ -1,376 +1,376 @@
 [
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SENIN"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SENIN"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SENIN"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SENIN"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SENIN"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SENIN"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SENIN"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SENIN"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "SELASA"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "SELASA"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "SELASA"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "SELASA"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SELASA"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "SELASA"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SELASA"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "SELASA"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "RABU"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "RABU"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "RABU"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "RABU"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "RABU"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "RABU"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "RABU"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "RABU"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "KAMIS"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793d" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "KAMIS"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "KAMIS"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77941" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "KAMIS"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "KAMIS"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "KAMIS"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77945" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "KAMIS"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "KAMIS"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b5e62b44ed48acb7517734" },
-    "day": "JUMAT"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77940" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793a" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77943" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b5e62b44ed48acb7517734" },
+        "day": "JUMAT"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
-    "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
-    "day": "JUMAT"
-  },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77944" },
+        "teacherId": { "$oid": "66b9c0de6803fe997fd77906" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793e" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793b" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66b9bfd66803fe997fd778fe" },
+        "day": "JUMAT"
+    },
 
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
-    "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
-    "startTime": "08:00",
-    "endTime": "10:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
-    "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
-    "startTime": "11:00",
-    "endTime": "12:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "JUMAT"
-  },
-  {
-    "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
-    "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
-    "startTime": "13:00",
-    "endTime": "15:00",
-    "classId": { "$oid": "66ba09786803fe997fd77950" },
-    "day": "JUMAT"
-  }
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793c" },
+        "teacherId": { "$oid": "66ba092e6803fe997fd7794e" },
+        "startTime": 8,
+        "endTime": 10,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd77942" },
+        "teacherId": { "$oid": "66b9c0886803fe997fd77903" },
+        "startTime": 11,
+        "endTime": 12,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "JUMAT"
+    },
+    {
+        "subjectId": { "$oid": "66ba073b6803fe997fd7793f" },
+        "teacherId": { "$oid": "66b5e84144ed48acb7517752" },
+        "startTime": 13,
+        "endTime": 15,
+        "classId": { "$oid": "66ba09786803fe997fd77950" },
+        "day": "JUMAT"
+    }
 ]
