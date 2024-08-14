@@ -66,6 +66,20 @@ class Schedule {
           },
         },
         {
+          $lookup: {
+            from: "users",
+            localField: "teacherId",
+            foreignField: "_id",
+            as: "teacher",
+          },
+        },
+        {
+          $unwind: {
+            path: "$teacher",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
           $unwind: {
             path: "$subject",
             preserveNullAndEmptyArrays: true,
@@ -75,6 +89,9 @@ class Schedule {
           $match: {
             day: day.toUpperCase(),
           },
+        },
+        {
+          $unset: ["teacher.password", "teacher.classId"],
         },
       ];
     }
@@ -104,6 +121,20 @@ class Schedule {
         },
       },
       {
+        $lookup: {
+          from: "users",
+          localField: "teacherId",
+          foreignField: "_id",
+          as: "teacher",
+        },
+      },
+      {
+        $unwind: {
+          path: "$teacher",
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+      {
         $unwind: {
           path: "$subject",
           preserveNullAndEmptyArrays: true,
@@ -113,6 +144,9 @@ class Schedule {
         $match: {
           day: day.toUpperCase(),
         },
+      },
+      {
+        $unset: ["teacher.password", "teacher.classId"],
       },
     ];
     return await database.collection("schedules").aggregate(agg).toArray();
