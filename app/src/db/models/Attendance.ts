@@ -7,12 +7,34 @@ class Attendance {
     return database.collection("attendance_records");
   }
 
-  static async scannedAttendance() {}
-  static async insertAttendance() {
+  static async scannedAttendance(userId: string, scheduleId: string) {
+    let check = await this.collection().findOne({
+      scheduleId: new ObjectId(String(scheduleId)),
+      date: dayjs().format("DD-MM-YYYY"),
+      userId: new ObjectId(String(userId)),
+    });
+    if (check?.status == "Hadir") {
+      return "already scanned";
+    }
+    await this.collection().updateOne(
+      {
+        scheduleId: new ObjectId(String(scheduleId)),
+        date: dayjs().format("DD-MM-YYYY"),
+        userId: new ObjectId(String(userId)),
+      },
+      {
+        $set: {
+          status: "Hadir",
+        },
+      }
+    );
+    return "success";
+  }
+  static async insertAttendance(userId: string) {
     await this.collection().insertOne({
       scheduleId: new ObjectId("5f9d2b6c3f1d7e001f6d0c7d"),
       date: dayjs().format("DD-MM-YYYY"),
-      userId: new ObjectId("5f9d2b6c3f1d7e001f6d0c7d"),
+      userId: new ObjectId(String(userId)),
       status: "Alpha",
     });
     return;
