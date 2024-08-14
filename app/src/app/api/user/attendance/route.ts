@@ -13,3 +13,12 @@ export async function GET(request: Request) {
     status: 200,
   });
 }
+
+export async function PATCH(request: Request) {
+  return NextResponse.json(
+    { message: "lmao" },
+    {
+      status: 200,
+    }
+  );
+}
