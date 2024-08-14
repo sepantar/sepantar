@@ -42,7 +42,7 @@ export async function POST(request: Request) {
             body.to
         } Please ensure the output is in object string as follows ${JSON.stringify(
             obj
-        )} in Indonesian only and must without another characters or close tags. And do not communicate with the user directly.`;
+        )} in Indonesian only and must without another characters or close tags.DON'T RETURN ANY SYMBOL And do not communicate with the user directly.`;
 
         console.log(prompt);
 
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
                 { role: "system", content: prompt },
                 { role: "user", content: prompt },
             ],
-            model: "gpt-3.5-turbo",
+            model: "gpt-4o-mini",
         });
 
         let output = completion.choices[0].message.content;
@@ -94,3 +94,4 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
+
