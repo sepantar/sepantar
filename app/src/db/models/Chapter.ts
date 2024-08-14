@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { database } from "../config/mongodb";
 
-interface summaryType {
+export interface summaryType {
     name: string;
     subsections: Array<string>;
 }
@@ -20,7 +20,9 @@ class Chapter {
         return "success add"
     }
     static async getChapterById(chapterId: string) {
-        return this.collection().findOne({ _id: new ObjectId(chapterId) });
+        return await this.collection().findOne({ _id: new ObjectId(chapterId) });
+       
+        
     }
 }
 
