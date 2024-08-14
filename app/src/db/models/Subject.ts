@@ -109,6 +109,14 @@ class Subject {
         },
       },
       {
+        $lookup: {
+          as: "chapters",
+          from: "chapters",
+          foreignField: "subjectId",
+          localField: "_id",
+        },
+      },
+      {
         $unwind: "$teacher",
       },
       {
