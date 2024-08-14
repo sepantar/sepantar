@@ -20,6 +20,14 @@ export async function POST(request: Request) {
         const openai = new OpenAI({
             apiKey: process.env.OPENAI_API_KEY,
         });
+        let dataStudyPlan = await Studyplan.getPlanByChapterId(body.chapterId, userId);
+        console.log(dataStudyPlan, "route subject/studyplan");
+        if (dataStudyPlan) {
+            return NextResponse.json(
+                { message: "You already have a study plan for this material." },
+                { status: 404 }
+            );
+        }
         let data = await Chapter.getChapterById(body.chapterId);
         console.log(data, "<<<data");
         let formattedData = data?.material
