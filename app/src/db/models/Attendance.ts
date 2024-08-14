@@ -1,9 +1,21 @@
 import { ObjectId } from "mongodb";
 import { database } from "../config/mongodb";
+import dayjs from "dayjs";
 
 class Attendance {
   static collection() {
     return database.collection("attendance_records");
+  }
+
+  static async scannedAttendance() {}
+  static async insertAttendance() {
+    await this.collection().insertOne({
+      scheduleId: new ObjectId("5f9d2b6c3f1d7e001f6d0c7d"),
+      date: dayjs().format("DD-MM-YYYY"),
+      userId: new ObjectId("5f9d2b6c3f1d7e001f6d0c7d"),
+      status: "Alpha",
+    });
+    return;
   }
 
   static async getUserAttendance(id: string) {

@@ -21,7 +21,7 @@ class Subject {
         },
       },
       {
-        $unset: ["chapters._id", "chapters.subjectId"],
+        $unset: ["chapters.subjectId"],
       },
     ];
     return await this.collection().aggregate(agg).toArray();
