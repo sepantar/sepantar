@@ -1,87 +1,84 @@
 import extractValidJSON from "@/db/helpers/validjson";
 import Chapter from "@/db/models/Chapter";
 import Studyplan from "@/db/models/Studyplan";
-import { TextServiceClient } from "@google-ai/generativelanguage";
-import { GoogleAuth } from "google-auth-library";
 import { NextResponse } from "next/server";
+import OpenAI from "openai";
+
+interface inPlanType {
+    name: string;
+    summary: string;
+}
 
 export async function POST(request: Request) {
     try {
         const body: {
-            subjectId: string;
             chapterId: string;
             start: string;
             to: string;
         } = await request.json();
         const userId = request.headers.get("x-id") as string;
-        const API_KEY = process.env.GEMINI_API_KEY as string;
-        const MODEL_NAME = "models/text-bison-001";
-        const client = new TextServiceClient({
-            authClient: new GoogleAuth().fromAPIKey(API_KEY),
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
         });
         let data = await Chapter.getChapterById(body.chapterId);
         console.log(data, "<<<data");
-        
-        let obj = {
-            name: "",
-            plan: [
-                { materi: "", 
-                    subtasks: [
-                        { content: "", status: false }
-                    ] },
+        let formattedData = data?.material
+            .map((objt: inPlanType) => JSON.stringify(objt))
+            .join(",");
 
+        let obj = {
+            chapterId: body.chapterId,
+            plan: [
+                {
+                    judulTask: "",
+                    taskList: ["", ""],
+                    status: false,
+                },
             ],
         };
-        // const prompt: string = `You are a highly skilled educational planner. I will provide you with text extracted from a PDF that includes various subjects and subtopics. Your task is to generate a study plan for students, focusing on organizing the content into structured subtopics. About ${
-        //     body.chapterId
-        // } and For each subtopic, create a detailed plan that includes actionable steps or tasks students can follow to effectively study the material start from ${
-        //     body.start
-        // } to ${
-        //     body.to
-        // } Please ensure the output is in object string as follows ${JSON.stringify(
-        //     obj
-        // )} in Indoensian only and must without another characters or close tags. And do not communicate with the user directly.`;
-        // let response = await client.generateText({
-        //     model: MODEL_NAME,
-        //     prompt: {
-        //         text: prompt,
-        //     },
-        // });
-        // if (!response) {
-        //     return NextResponse.json(
-        //         { error: "No response from the model" },
-        //         { status: 500 }
-        //     );
-        // }
-        // const output = response[0]?.candidates?.[0]?.output;
-        // if (!output) {
-        //     return NextResponse.json(
-        //         { error: "No output in the response" },
-        //         { status: 500 }
-        //     );
-        // }
-        // // let cleanJsonString = output.replace(/\\n/g, "");
-        // // cleanJsonString = cleanJsonString.replace(/```/g, "");
-        // let planOutput = extractValidJSON(output);
-        // if (!planOutput) {
-        //     return NextResponse.json(
-        //         { error: "Please generate again" },
-        //         { status: 500 }
-        //     );
-        // }
-        // let addPlan = await Studyplan.createPlan(
-        //     userId,
-        //     body.subjectId,
-        //     planOutput
-        // );
-        // if (!addPlan) {
-        //     return NextResponse.json(
-        //         { error: "Failed to add plan" },
-        //         { status: 500 }
-        //     );
-        // }
+        const prompt: string = `You are a highly skilled educational planner. I will provide you with text extracted from a PDF that includes various subjects and subtopics. Your task is to generate a study plan for students, focusing on organizing the content into structured subtopics. About ${formattedData} and For each subtopic, create a detailed plan that includes actionable steps or tasks students can follow to effectively study the material start from ${
+            body.start
+        } to ${
+            body.to
+        } Please ensure the output is in object string as follows ${JSON.stringify(
+            obj
+        )} in Indonesian only and must without another characters or close tags. And do not communicate with the user directly.`;
+
+        console.log(prompt);
+
+        const completion = await openai.chat.completions.create({
+            messages: [
+                { role: "system", content: prompt },
+                { role: "user", content: prompt },
+            ],
+            model: "gpt-3.5-turbo",
+        });
+
+        let output = completion.choices[0].message.content;
+        let cleanJsonString = output?.replace(/\\n/g, "");
+        cleanJsonString = cleanJsonString?.replace(/```/g, "");
+        let planOutput = extractValidJSON(output as string);
+        if (!planOutput) {
+            return NextResponse.json(
+                { error: "Please generate again" },
+                { status: 500 }
+            );
+        }
+        console.log(planOutput, "<<<planOutput");
+
+        let addPlan = await Studyplan.createPlan(
+            userId,
+            body.chapterId,
+            planOutput
+        );
+        if (!addPlan) {
+            return NextResponse.json(
+                { error: "Failed to add plan" },
+                { status: 500 }
+            );
+        }
         return NextResponse.json(
-            { message: "Success add study plan" },
+            { message: "Success add plan" },
             { status: 200 }
         );
     } catch (error: any) {
