@@ -3,6 +3,7 @@ import { Client } from "@octoai/client";
 import pdf from "pdf-parse";
 import Chapter from "@/db/models/Chapter";
 import extractValidJSON from "@/db/helpers/validjson";
+import OpenAI from "openai";
 
 interface summaryType{
     name : string;
@@ -31,24 +32,17 @@ export async function POST(request: Request) {
             `${chunks.length} chunks created with ${pdfText.length} characters.`
         );
         const summaries: string[] = [];
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
         for (const chunk of chunks) {
-            const completion = await client.chat.completions.create({
+            const completion = await openai.chat.completions.create({
                 messages: [
-                    {
-                        role: "system",
-                        content: contentS,
-                           
-                    },
-                    {
-                        role: "assistant",
-                        content: `PDF content:\n${chunk}`,
-                    },
+                    { role: "system", content: contentS },
+                    { role: "user", content: contentS },
                 ],
-                model: "mixtral-8x7b-instruct",
-                max_tokens: 3145,
-                presence_penalty: 0,
-                temperature: 0,
-                top_p: 1,
+                model: "gpt-4o-mini",
+                response_format : {"type" : "json_object"}
             });
             summaries.push(completion.choices[0].message.content as string);
         }
@@ -56,31 +50,20 @@ export async function POST(request: Request) {
         console.log(summary);
         
         if (summary.length > 500) {
-            const additionalSummary = await client.chat.completions.create({
+            const completion = await openai.chat.completions.create({
                 messages: [
-                    {
-                        role: "system",
-                        content:contentS,
-                    },
-                    {
-                        role: "user",
-                        content: `PDF content:\n${summary}`,
-                    },
+                    { role: "system", content: contentS },
+                    { role: "user", content: contentS },
                 ],
-                model: "mixtral-8x7b-instruct",
-                max_tokens: 3145,
-                presence_penalty: 0,
-                temperature: 0,
-                top_p: 1,
+                model: "gpt-4o-mini",
+                response_format : {"type" : "json_object"}
+                
             });
-
-            if (additionalSummary.choices[0].message.content) {
-                summary = additionalSummary.choices[0].message.content;
+            summaries.push(completion.choices[0].message.content as string);
+            if (completion.choices[0].message.content) {
+                summary = completion.choices[0].message.content;
             }
         }
-        // const cleanJsonString = summary.replace(/\\n/g, "");
-        // const cleanJsonString = extractValidJSON(summary)
-        // console.log(cleanJsonString);
         
         let summaryObj: summaryType = extractValidJSON(summary)
         console.log(summaryObj, "<<<<route");
