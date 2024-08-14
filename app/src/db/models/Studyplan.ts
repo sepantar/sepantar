@@ -24,7 +24,10 @@ class Studyplan {
         });
     }
     static async getPlanByChapterId(chapterId: string, userId: string) {
-        return await this.collection().find({ chapterId: new ObjectId(chapterId), userId : new ObjectId(userId) }).toArray();
+        return await this.collection().findOne({ chapterId: new ObjectId(chapterId), userId : new ObjectId(userId) });
+    }
+    static async deletePlanByChapterId(chapterId: string, userId: string) {
+        return await this.collection().deleteOne({ chapterId: new ObjectId(chapterId), userId : new ObjectId(userId) });
     }
 }
 export default Studyplan;
