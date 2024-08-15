@@ -29,8 +29,22 @@ class Schedule {
           },
         },
         {
+          $lookup: {
+            from: "classes",
+            localField: "classId",
+            foreignField: "_id",
+            as: "class",
+          },
+        },
+        {
           $unwind: {
             path: "$subject",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$class",
             preserveNullAndEmptyArrays: true,
           },
         },
