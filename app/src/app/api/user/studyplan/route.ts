@@ -25,12 +25,14 @@ export async function DELETE(request: Request) {
     const chapterId = searchParams.get("chapterId") as string;
     const userId = request.headers.get("x-id") as string;
     console.log(chapterId, userId);
+
     let data = await Studyplan.getPlanByChapterId(chapterId, userId);
     await Studyplan.deletePlanByChapterId(chapterId, userId);
     if (!data) {
       return NextResponse.json(
         { message: "You don't have a study plan yet." },
         { status: 404 }
+
       );
     }
     return NextResponse.json(
@@ -40,7 +42,6 @@ export async function DELETE(request: Request) {
   } catch (error: any) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
-}
 
 export async function PUT(request: Request) {
   try {
@@ -58,4 +59,5 @@ export async function PUT(request: Request) {
     console.log(error);
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
+
 }
