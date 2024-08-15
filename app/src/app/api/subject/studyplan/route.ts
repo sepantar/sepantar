@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
     let obj = {
       chapterId: body.chapterId,
-      plan: [
+      plan_contents: [
         {
           judulTask: "",
           taskList: ["", ""],
