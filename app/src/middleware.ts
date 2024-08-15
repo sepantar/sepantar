@@ -12,6 +12,7 @@ export async function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith("/api/user/schedule") ||
     request.nextUrl.pathname.startsWith("/api/user/subject") ||
     request.nextUrl.pathname.startsWith("/api/subject") ||
+    request.nextUrl.pathname.startsWith("/api/attendance") ||
     request.nextUrl.pathname.startsWith("/api/user/studyplan")
   ) {
     if (!authorization) {
@@ -56,5 +57,9 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/api/user/:path*", "/api/subject/:path*"],
+  matcher: [
+    "/api/user/:path*",
+    "/api/subject/:path*",
+    "/api/attendance/:path*",
+  ],
 };
