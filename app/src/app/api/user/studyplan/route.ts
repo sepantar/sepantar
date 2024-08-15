@@ -42,6 +42,7 @@ export async function DELETE(request: Request) {
   } catch (error: any) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
+}
 
 export async function PUT(request: Request) {
   try {
