@@ -74,6 +74,79 @@ class Attendance {
     return;
   }
 
+  static async getTeacherAttendance(id: string) {
+    let agg = [
+      {
+        $match: {
+          date: dayjs().format("DD-MM-YYYY"),
+        },
+      },
+      {
+        $lookup: {
+          as: "detail",
+          from: "schedules",
+          foreignField: "_id",
+          localField: "scheduleId",
+        },
+      },
+      {
+        $unwind: {
+          path: "$detail",
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+      {
+        $lookup: {
+          as: "subject",
+          from: "subjects",
+          foreignField: "_id",
+          localField: "detail.subjectId",
+        },
+      },
+      {
+        $unwind: {
+          path: "$subject",
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+      {
+        $unset: [
+          "detail.subjectId",
+          "userId",
+          "scheduleId",
+          "detail.endTime",
+          "detail.startTime",
+          "detail._id",
+          "subject._id",
+          "subject.description",
+        ],
+      },
+      {
+        $lookup: {
+          as: "class",
+          from: "classes",
+          foreignField: "_id",
+          localField: "detail.classId",
+        },
+      },
+      {
+        $unwind: {
+          path: "$class",
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+      {
+        $match: {
+          "detail.teacherId": new ObjectId(String(id)),
+        },
+      },
+    ];
+    return await database
+      .collection("attendance_records")
+      .aggregate(agg)
+      .toArray();
+  }
+
   static async getUserAttendance(id: string) {
     // console.log(id);
 

@@ -4,14 +4,27 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const userId = request.headers.get("x-id");
-  let data = await Attendance.getUserAttendance(userId as string);
-  console.log(userId, "<<<<<");
+  const userRole = request.headers.get("x-role");
 
-  console.log(data);
+  if (userRole !== "teacher") {
+    let data = await Attendance.getUserAttendance(userId as string);
+    console.log(userId, "<<<<<");
 
-  return NextResponse.json(data, {
-    status: 200,
-  });
+    console.log(data);
+
+    return NextResponse.json(data, {
+      status: 200,
+    });
+  } else {
+    let data = await Attendance.getTeacherAttendance(userId as string);
+    console.log(data);
+    let perClass = [];
+    data.forEach((element) => {});
+
+    return NextResponse.json(data, {
+      status: 200,
+    });
+  }
 }
 
 export async function PATCH(request: Request) {
