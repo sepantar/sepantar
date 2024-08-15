@@ -17,3 +17,30 @@ export async function GET(request: Request) {
     status: 200,
   });
 }
+
+export async function PUT(request: Request) {
+  try {
+    const body: { password: string; phoneNumber: string } =
+      await request.json();
+    if (!body.password || !body.phoneNumber) {
+      return NextResponse.json(
+        {
+          message: "password/phoneNumber is required",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+    const userId = request.headers.get("x-id") as string;
+    let data = await User.updateUserInfo(
+      body.password,
+      body.phoneNumber,
+      userId
+    );
+    return NextResponse.json({message: "success update info"}, { status: 200 });
+  } catch (error: any) {
+    console.log(error);
+    return NextResponse.json({ message: error.message }, { status: 500 });
+  }
+}
