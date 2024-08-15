@@ -51,8 +51,9 @@ export async function PUT(request: Request) {
       userId: string;
     } = await request.json();
     const userId = request.headers.get("x-id") as string;
-    let data = await Studyplan.updatePlan(body._id, body);
     console.log(body, userId);
+    let data = await Studyplan.updatePlan(body._id, body);
+    console.log(data);
     return NextResponse.json(data, { status: 200 });
   } catch (error: any) {
     console.log(error);
