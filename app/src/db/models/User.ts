@@ -93,6 +93,9 @@ class User {
     payload.password = hashPassword(payload.password);
     await this.collection().insertOne(payload);
   }
+  static async updateUserInfo(password: string, phoneNumber: string, userId : string){
+    return await this.collection().updateOne({_id: new ObjectId(String(userId))}, {$set: {password: hashPassword(password), phoneNumber: phoneNumber}})
+  }
 }
 
 export default User;
